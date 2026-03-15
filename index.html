@@ -1,24 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon Premier Site Python</title>
-    <link rel="stylesheet" href="https://pyscript.net" />
-    <script type="module" src="https://pyscript.net"></script>
-</head>
-<body style="font-family: Arial; text-align: center; margin-top: 100px;">
-    <h1>Bravo ! Ton site Python est en ligne.</h1>
-    <div id="output" style="font-size: 24px; color: #2c3e50;"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Dashboard Lazare</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; height: 100vh; background-color: #f4f7f6; }
+        /* Menu de gauche */
+        .sidebar { width: 250px; background-color: #ffffff; border-right: 1px solid #ddd; padding: 20px; display: flex; flex-direction: column; }
+        .sidebar h2 { color: #333; font-size: 18px; margin-bottom: 30px; }
+        .menu-item { padding: 12px; cursor: pointer; color: #666; border-radius: 8px; margin-bottom: 5px; transition: 0.3s; }
+        .menu-item:hover { background-color: #f0f0f0; color: #000; }
+        .active { background-color: #f0f7ff; color: #007bff; font-weight: bold; }
+        
+        /* Contenu principal */
+        .main-content { flex: 1; padding: 40px; overflow-y: auto; }
+        h1 { font-size: 28px; margin-bottom: 10px; }
+        .subtitle { color: #888; margin-bottom: 30px; }
 
-    <script type="py">
-        from datetime import datetime
-        import js
-        
-        # Ce code Python s'exécute dans ton navigateur !
-        maintenant = datetime.now()
-        message = f"Nous sommes le {maintenant.strftime('%d/%m/%Y')} à {maintenant.strftime('%H:%M:%S')}"
-        
-        js.document.getElementById("output").innerHTML = message
-    </script>
+        /* Cartes de statistiques */
+        .stats-container { display: flex; gap: 20px; margin-bottom: 30px; }
+        .card { background: white; padding: 20px; border-radius: 15px; flex: 1; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card h3 { margin: 0; font-size: 14px; color: #888; }
+        .card .price { font-size: 24px; font-weight: bold; margin-top: 10px; color: #333; }
+    </style>
+</head>
+<body>
+
+    <!-- Barre latérale -->
+    <div class="sidebar">
+        <h2>BassanDigital B...</h2>
+        <div class="menu-item active">🏠 Accueil</div>
+        <div class="menu-item">🛒 Ventes</div>
+        <div class="menu-item">📦 Produits</div>
+        <div class="menu-item">👥 Clients</div>
+        <div class="menu-item">💰 Revenus</div>
+        <div class="menu-item">⚙️ Paramètres</div>
+    </div>
+
+    <!-- Contenu -->
+    <div class="main-content">
+        <h1>Bonsoir Lazare ! 🌙</h1>
+        <p class="subtitle">✨ Le moment parfait pour planifier le succès de demain.</p>
+
+        <div class="stats-container">
+            <div class="card">
+                <h3>Revenu total</h3>
+                <div class="price">6200 FCFA</div>
+            </div>
+            <div class="card">
+                <h3>7 derniers jours</h3>
+                <div class="price">6200 FCFA</div>
+            </div>
+        </div>
+
+        <h3>Produits les plus vendus</h3>
+        <div class="card" style="display: flex; align-items: center; gap: 15px;">
+            <div style="width: 50px; height: 50px; background: #ddd; border-radius: 5px;"></div>
+            <div>
+                <strong>FORMATION COMPLETE...</strong><br>
+                <span style="color: #888;">1000 FCFA</span>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
