@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Premier Site Python</title>
+    <link rel="stylesheet" href="https://pyscript.net" />
+    <script type="module" src="https://pyscript.net"></script>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 100px;">
+    <h1>Bravo ! Ton site Python est en ligne.</h1>
+    <div id="output" style="font-size: 24px; color: #2c3e50;"></div>
+
+    <script type="py">
+        from datetime import datetime
+        import js
+        
+        # Ce code Python s'exécute dans ton navigateur !
+        maintenant = datetime.now()
+        message = f"Nous sommes le {maintenant.strftime('%d/%m/%Y')} à {maintenant.strftime('%H:%M:%S')}"
+        
+        js.document.getElementById("output").innerHTML = message
+    </script>
+</body>
+</html>
